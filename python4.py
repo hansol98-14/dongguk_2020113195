@@ -1,16 +1,19 @@
 # 2020113195 유한솔
-# 예제4 메모리공간을 동적으로 사용해 데이터 관리하기
+# 예제4 가위바위보 게임
 
-갯수 = int(input("입력할 정수 갯수를 적으세요 > "))
-sum = 0
+import random
 
-for i in range(갯수):
-    j = int(input(str(i)+"번 정수 > "))
-    sum += j
+game = ['가위', '바위', '보']
+chk = input('가위, 바위, 보 중 골라주세요')
+com = game[random.randint(0,2)]
 
-avg = sum/int(갯수)
+print(chk)
+print(com)
 
-print("합계 = ",sum)
-print("평균 = ",avg)
-
-del sum, avg, 갯수
+vs = game.index(chk) - game.index(com)
+if vs == 1 or vs == -2:
+    print('이겼어요!')
+elif vs == -1 or vs == 2:
+    print('졌어요ㅜ.ㅜ')
+elif vs == 0:
+    print('비겼어요~')
